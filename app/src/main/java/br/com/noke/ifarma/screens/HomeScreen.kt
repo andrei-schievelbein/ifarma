@@ -1,11 +1,7 @@
 package br.com.noke.ifarma.screens
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Box
-
 import androidx.compose.foundation.layout.Column
-
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,21 +9,16 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
-import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -37,15 +28,19 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+
 @Composable
 fun HomeScreen() {
 
     Column {
+        Carussel()
         ReceitaEnvio()
-        Spacer(modifier = Modifier.height(50.dp))
+        Spacer(modifier = Modifier.height(5.dp))
+        Formulario()
         Enviar()
     }
 }
+
 @Composable
 fun Enviar(modifier: Modifier = Modifier) {
     Button(
@@ -83,12 +78,13 @@ fun ReceitaEnvio() {
                 .clip(shape = RoundedCornerShape(15.dp))
                 .background(Color.Gray)
         ) {
-            Row(modifier = Modifier
-                .width(50.dp)
-                .height(110.dp)
-                .background(Color(0xFFFEF7E6))
+            Row(
+                modifier = Modifier
+                    .width(50.dp)
+                    .height(110.dp)
+                    .background(Color(0xFFFEF7E6))
                 //.border(BorderStroke(1.dp, Color.Magenta))
-            ){
+            ) {
                 Icon(
                     modifier = Modifier
                         .padding(
@@ -101,12 +97,13 @@ fun ReceitaEnvio() {
                     contentDescription = "Book"
                 )
             }
-            Row(modifier = Modifier
-                .width(260.dp)
-                .height(110.dp)
-                .background(Color(0xFFFEF7E6))
-            ){
-                Column (
+            Row(
+                modifier = Modifier
+                    .width(260.dp)
+                    .height(110.dp)
+                    .background(Color(0xFFFEF7E6))
+            ) {
+                Column(
                     modifier = Modifier
                         .padding(
                             top = 18.dp,
@@ -114,7 +111,7 @@ fun ReceitaEnvio() {
                             end = 10.dp,
                             bottom = 10.dp
                         )
-                ){
+                ) {
 
                     Text(
                         text = "Já tem a receita?",
@@ -122,26 +119,31 @@ fun ReceitaEnvio() {
                         fontWeight = FontWeight.Bold,
                         fontSize = 14.sp
                     )
-                    Spacer(modifier =Modifier.height(10.dp))
+                    Spacer(modifier = Modifier.height(10.dp))
 
-                    Text(
-                        text = "Envie o seu pedido e receba seus medicamentos!",
+                    Text(modifier = Modifier
+                        .offset(y = (-10).dp),
+                        text = "Envie o seu pedido e receba seus\nmedicamentos!",
                         fontFamily = FontFamily.Default,
-                        fontSize = 12.sp
+                        fontSize = 12.sp,
+                        maxLines = 2,
+                        lineHeight = 16.sp
                     )
                 }
             }
-            Row(modifier = Modifier
-                .fillMaxSize()
-                .height(110.dp)
-                .background(Color(0xFFFEF7E6))
-            ){
-                Icon(modifier = Modifier.padding(
-                    top = 40.dp,
-                    start = 15.dp,
-                    end = 10.dp,
-                    bottom = 10.dp
-                ),
+            Row(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .height(110.dp)
+                    .background(Color(0xFFFEF7E6))
+            ) {
+                Icon(
+                    modifier = Modifier.padding(
+                        top = 40.dp,
+                        start = 15.dp,
+                        end = 10.dp,
+                        bottom = 10.dp
+                    ),
                     imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
                     contentDescription = "Seta para a direita"
                 )

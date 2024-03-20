@@ -101,24 +101,16 @@ fun AppNavigation(modifier: Modifier = Modifier) {
                         )
                     }
                     Box(
-                        modifier = Modifier.size(5.dp)
-                            .background(Color.Red)
+                        modifier = Modifier
+                            .size(10.dp)
+                            .offset(x = (-18).dp, y = (-12).dp)
                             .clip(CircleShape)
-                            .offset(x = (-30).dp)
+                            .background(Color.Red)
+
                     ) {
-                        Text(
-                            text = "+1",
-                            modifier = Modifier.align(Alignment.Center),
-                            color = Color.White,
-                            fontSize = 16.sp
-                        )
                     }
-
-
                 }
-//                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-//                containerColor = Color.Black // Opcional para transparência
-//                )
+
             )
         },
         bottomBar = {
