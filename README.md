@@ -36,4 +36,4 @@ git clone https://github.com/andrei-schievelbein/ifarma.git
 ## 💡 Contribuições
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
 
-### Feito por Andrei Schievelbein | 🌐 LinkedIn
+### Feito por Andrei Schievelbein |[🌐LinkedIn](https://www.linkedin.com/in/andrei-schievelbein/)
