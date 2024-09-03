@@ -76,7 +76,7 @@ fun RemediosList(
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .height(120.dp)
+            .height(150.dp)
             .padding(16.dp)
             .border(
                 width = 2.dp,
