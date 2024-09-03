@@ -27,6 +27,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import br.com.noke.ifarma.navigation.Screens
 
 
 @Composable
@@ -43,8 +45,10 @@ fun HomeScreen() {
 
 @Composable
 fun Enviar(modifier: Modifier = Modifier) {
+
+
     Button(
-        onClick = { /*TODO*/ },
+        onClick = { },
         modifier = modifier
             .fillMaxWidth()
             .height(55.dp)

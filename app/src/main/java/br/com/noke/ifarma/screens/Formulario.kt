@@ -21,6 +21,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
@@ -44,6 +45,7 @@ fun AddRemedio(
     onRemedioAdd: (String) -> Unit
 ) {
     var remedioNome by remember { mutableStateOf("") }
+    val focusManager = LocalFocusManager.current
 
     OutlinedTextField(
         modifier = modifier
@@ -57,6 +59,7 @@ fun AddRemedio(
                 onClick = {
                     onRemedioAdd(remedioNome)
                     remedioNome = "" // Limpa o campo após adicionar
+                    focusManager.clearFocus() // Remove o foco da caixa de texto
                 }
             ) {
                 Icon(Icons.Default.Add, contentDescription = "Adicionar")
@@ -73,7 +76,7 @@ fun RemediosList(
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .height(250.dp)
+            .height(120.dp)
             .padding(16.dp)
             .border(
                 width = 2.dp,
